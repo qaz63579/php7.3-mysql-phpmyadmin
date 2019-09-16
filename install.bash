@@ -19,9 +19,9 @@ apt-get install -t stretch -y php7.3 php7.3-fpm php7.3-cli php7.3-opcache php7.3
 apt-get install -t stretch -y nginx
 
 update-rc.d nginx defaults
-update-rc.d php7.0-fpm defaults
+update-rc.d php7.3-fpm defaults
 
-sed -i 's/^;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/' /etc/php/7.0/fpm/php.ini
+sed -i 's/^;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/' /etc/php/7.3/fpm/php.ini
 sed -i 's/# server_names_hash_bucket_size/server_names_hash_bucket_size/' /etc/nginx/nginx.conf
 
 cat > /etc/nginx/sites-enabled/default << "EOF"
